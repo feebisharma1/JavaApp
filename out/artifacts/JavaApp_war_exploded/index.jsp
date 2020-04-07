@@ -1,4 +1,4 @@
-<%--
+<%@ page import="Emums.City" %><%--
   Created by IntelliJ IDEA.
   User: feebisharma1
   Date: 4/5/20
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
   </head>
   <body>
+  <h1 align="center">Registration Page</h1>
   <div class="container">
     <form>
       <div class="form-row">
@@ -36,8 +37,16 @@
         <div class="form-group col-md-4">
           <label for="inputState">State</label>
           <select id="inputState" class="form-control">
-            <option selected>Choose...</option>
-            <option>...</option>
+            <option selected>Please Choose One Below</option>
+            <option>
+              <% City[] cities = City.values();
+                  for(City oneCities: cities){
+              %>
+              <option value="<%=oneCities%>"><%=oneCities%></option>
+              <%
+                  }
+              %>
+            </option>
           </select>
         </div>
       </div>
